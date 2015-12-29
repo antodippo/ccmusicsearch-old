@@ -1,0 +1,70 @@
+{% extends 'CCMusicSearchBundle::base.html.twig' %}
+
+{% block body %}
+
+    <h1>Homepage</h1>
+
+    {{ form_start(form, {'attr': {'class': 'search-form form-inline'}}) }}
+    <div class="form-group">
+        {{ form_widget(form.tag, {'attr': {'class': 'form-control', 'placeholder': 'Serch for a tag, a genre, an instrument...' }}) }}
+        {{ form_widget(form.search, {'attr': {'class': 'btn btn-default'}}) }}
+    </div>
+    {{ form_end(form) }}
+
+    {% if form.vars.submitted %}
+        <div class="search-results">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Author</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                        <th>Date</th>
+                        <th>Link</th>
+                        <th>License</th>
+                        <th>Service</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for song in songs %}
+                        <tr>
+                            <td>{{ song.author }}</td>
+                            <td>{{ song.title }}</td>
+                            <td width="80px">{{ song.duration }}</td>
+                            <td width="80px">{{ song.date|date('Y/m/d') }}</td>
+                            <td width="80px">
+                                <a href='{{ song.link }}' target='_blank'>
+                                    <span class="glyphicon glyphicon-share"></span> Listen
+                                </a>
+                            </td>
+                            <td width="100px">
+                                {% if getButtonImageUrl(song.license) %}
+                                <a href="{{ getButtonUrl(song.license) }}" target="_blank">
+                                    <img src="{{ getButtonImageUrl(song.license) }}" />
+                                </a>
+                                {% endif %}
+                            </td>
+                            <td width="100px">{{ song.service|capitalize }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script language="JavaScript">
+        $(document).ready( function () {
+            $('.results-table').DataTable({
+                "pageLength": 25,
+                "language": {
+                    "search": "Quick search in results: ",
+                    "emptyTable": "No songs found"
+                }
+            });
+        } );
+    </script>
+{% endblock %}
