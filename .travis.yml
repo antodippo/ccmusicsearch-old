@@ -9,7 +9,7 @@ before_script:
 
 script:
   - mkdir -p build/logs
-  - phpunit -c app
+  - phpunit -c app/phpunit.xml.dist
 
 after_success:
-  - php vendor/bin/coveralls -v
+  - travis_retry php bin/coveralls -v
