@@ -4,7 +4,7 @@ namespace CCMusicSearchBundle\Service;
 
 use GuzzleHttp\Client;
 
-class ApiClient
+class ApiClient implements ApiClientInterface
 {
     protected $logger;
 

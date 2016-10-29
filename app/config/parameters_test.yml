@@ -1,0 +1,2 @@
+parameters:
+    api_client_class: CCMusicSearchBundle\Service\ApiClientStub
