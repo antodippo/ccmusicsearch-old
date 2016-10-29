@@ -3,6 +3,7 @@
 namespace CCMusicSearchBundle\Tests\Service;
 
 
+use CCMusicSearchBundle\Model\SongRecord;
 use CCMusicSearchBundle\Service\JamendoApiService;
 
 class JamendoApiServiceTest extends \PHPUnit_Framework_TestCase
@@ -62,23 +63,23 @@ class JamendoApiServiceTest extends \PHPUnit_Framework_TestCase
         );
 
         $expectedArray = array(
-            0 => array(
-                'author'    => 'The fixer',
-                'title'     => 'revealed',
-                'duration'  => '03.11',
-                'date'      => new \DateTime('2008-12-19'),
-                'link'      => 'http://www.jamendo.com/track/256860',
-                'license'   => 'by-sa',
-                'service'   => 'jamendo',
+            0 => new SongRecord(
+                'The fixer',
+                'revealed',
+                '03.11',
+                new \DateTime('2008-12-19'),
+                'http://www.jamendo.com/track/256860',
+                'by-sa',
+                'jamendo'
             ),
-            1 => array(
-                'author'    => 'The fixer',
-                'title'     => 'Test new title',
-                'duration'  => '00.33',
-                'date'      => new \DateTime('2008-12-19'),
-                'link'      => 'http://www.jamendo.com/track/256860',
-                'license'   => 'by-sa',
-                'service'   => 'jamendo',
+            1 => new SongRecord(
+                'The fixer',
+                'Test new title',
+                '00.33',
+                new \DateTime('2008-12-19'),
+                'http://www.jamendo.com/track/256860',
+                'by-sa',
+                'jamendo'
             ),
         );
 
