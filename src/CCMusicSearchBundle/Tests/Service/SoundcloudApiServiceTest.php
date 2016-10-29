@@ -3,6 +3,7 @@
 namespace CCMusicSearchBundle\Tests\Service;
 
 
+use CCMusicSearchBundle\Model\SongRecord;
 use CCMusicSearchBundle\Service\SoundcloudApiService;
 
 class SoundcloudApiServiceTest extends \PHPUnit_Framework_TestCase
@@ -135,23 +136,23 @@ class SoundcloudApiServiceTest extends \PHPUnit_Framework_TestCase
         );
 
         $expectedArray = array(
-            0 => array(
-                'author'    => 'CAKED UP',
-                'title'     => 'WRECKING BALL (CAKED UP REMIX) FREE DOWNLOAD',
-                'duration'  => '04.22',
-                'date'      => new \DateTime('2013-10-08 18:08:00 +0000'),
-                'link'      => 'https://soundcloud.com/eatdatcake/wrecking-ball-caked-up-remix',
-                'license'   => 'cc-by',
-                'service'   => 'soundcloud',
+            0 => new SongRecord(
+                'CAKED UP',
+                'WRECKING BALL (CAKED UP REMIX) FREE DOWNLOAD',
+                '04.22',
+                new \DateTime('2013-10-08 18:08:00 +0000'),
+                'https://soundcloud.com/eatdatcake/wrecking-ball-caked-up-remix',
+                'cc-by',
+                'soundcloud'
             ),
-            1 => array(
-                'author'    => 'CAKED UP',
-                'title'     => 'ROYALS-(CAKED UP REMIX) **FREE DOWNLOAD**',
-                'duration'  => '03.40',
-                'date'      => new \DateTime('2013-09-29 01:22:28 +0000'),
-                'link'      => 'https://soundcloud.com/eatdatcake/royals-caked-up-remix',
-                'license'   => 'cc-by',
-                'service'   => 'soundcloud',
+            1 => new SongRecord(
+                'CAKED UP',
+                'ROYALS-(CAKED UP REMIX) **FREE DOWNLOAD**',
+                '03.40',
+                new \DateTime('2013-09-29 01:22:28 +0000'),
+                'https://soundcloud.com/eatdatcake/royals-caked-up-remix',
+                'cc-by',
+                'soundcloud'
             ),
         );
 

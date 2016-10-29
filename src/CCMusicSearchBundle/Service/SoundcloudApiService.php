@@ -3,6 +3,8 @@
 namespace CCMusicSearchBundle\Service;
 
 
+use CCMusicSearchBundle\Model\SongRecord;
+
 class SoundcloudApiService extends AbstractApiService
 {
 
@@ -21,14 +23,14 @@ class SoundcloudApiService extends AbstractApiService
 
         $songRecords = array();
         foreach($data as $song) {
-            $songRecords[] = array(
-                'author'    => $song['user']['username'],
-                'title'     => $song['title'],
-                'duration'  => date('i.s', $song['duration']/1000),
-                'date'      => new \DateTime($song['created_at']),
-                'link'      => $song['permalink_url'],
-                'license'   => $song['license'],
-                'service'   => 'soundcloud'
+            $songRecords[] = new SongRecord(
+                $song['user']['username'],
+                $song['title'],
+                date('i.s', $song['duration']/1000),
+                new \DateTime($song['created_at']),
+                $song['permalink_url'],
+                $song['license'],
+                'soundcloud'
             );
         }
 

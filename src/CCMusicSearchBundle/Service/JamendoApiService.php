@@ -3,6 +3,8 @@
 namespace CCMusicSearchBundle\Service;
 
 
+use CCMusicSearchBundle\Model\SongRecord;
+
 class JamendoApiService extends AbstractApiService
 {
 
@@ -18,14 +20,14 @@ class JamendoApiService extends AbstractApiService
         $songRecords = array();
         if (array_key_exists('results',$data)) {
             foreach($data['results'] as $song) {
-                $songRecords[] = array(
-                    'author'    => $song['artist_name'],
-                    'title'     => $song['name'],
-                    'duration'  => date('i.s', $song['duration']),
-                    'date'      => new \DateTime($song['releasedate']),
-                    'link'      => $song['shareurl'],
-                    'license'   => $this->getLicenseCodFromUrl($song['license_ccurl']),
-                    'service'   => 'jamendo'
+                $songRecords[] = new SongRecord(
+                    $song['artist_name'],
+                    $song['name'],
+                    date('i.s', $song['duration']),
+                    new \DateTime($song['releasedate']),
+                    $song['shareurl'],
+                    $this->getLicenseCodFromUrl($song['license_ccurl']),
+                    'jamendo'
                 );
             }
         }

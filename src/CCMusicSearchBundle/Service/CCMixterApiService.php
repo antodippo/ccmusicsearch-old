@@ -3,6 +3,8 @@
 namespace CCMusicSearchBundle\Service;
 
 
+use CCMusicSearchBundle\Model\SongRecord;
+
 class CCMixterApiService extends AbstractApiService
 {
 
@@ -20,14 +22,14 @@ class CCMixterApiService extends AbstractApiService
             } else {
                 $formattedDuration = null;
             }
-            $songRecords[] = array(
-                'author'    => $song['user_name'],
-                'title'     => $song['upload_name'],
-                'duration'  => $formattedDuration,
-                'date'      => \DateTime::createFromFormat('D, M j, Y @ g:i A', $song['upload_date_format']),
-                'link'      => $song['file_page_url'],
-                'license'   => $this->getLicenseCodFromUrl($song['license_url']),
-                'service'   => 'ccmixter'
+            $songRecords[] = new SongRecord(
+                $song['user_name'],
+                $song['upload_name'],
+                $formattedDuration,
+                \DateTime::createFromFormat('D, M j, Y @ g:i A', $song['upload_date_format']),
+                $song['file_page_url'],
+                $this->getLicenseCodFromUrl($song['license_url']),
+                'ccmixter'
             );
         }
 

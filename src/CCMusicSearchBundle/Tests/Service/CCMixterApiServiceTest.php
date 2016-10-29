@@ -3,6 +3,7 @@
 namespace CCMusicSearchBundle\Tests\Service;
 
 
+use CCMusicSearchBundle\Model\SongRecord;
 use CCMusicSearchBundle\Service\CCMixterApiService;
 
 class CCMixterApiServiceTest extends \PHPUnit_Framework_TestCase
@@ -56,23 +57,23 @@ class CCMixterApiServiceTest extends \PHPUnit_Framework_TestCase
             
 
         $expectedArray = array(
-            0 => array(
-                'author'    => 'Reiswerk',
-                'title'     => 'Mirror (New Acapella Mix)',
-                'duration'  => '03.14',
-                'date'      => new \DateTime('2015-12-12 02:05:00'),
-                'link'      => 'http//ccmixter.org/files/Reiswerk/52456',
-                'license'   => 'by-nc',
-                'service'   => 'ccmixter',
+            0 => new SongRecord(
+                'Reiswerk',
+                'Mirror (New Acapella Mix)',
+                '03.14',
+                new \DateTime('2015-12-12 02:05:00'),
+                'http//ccmixter.org/files/Reiswerk/52456',
+                'by-nc',
+                'ccmixter'
             ),
-            1 => array(
-                'author'    => 'JeffSpeed68',
-                'title'     => 'Snowman',
-                'duration'  => '12.51',
-                'date'      => new \DateTime('2015-12-10 10:45:00'),
-                'link'      => 'http//ccmixter.org/files/JeffSpeed68/52419',
-                'license'   => 'by-nc',
-                'service'   => 'ccmixter',
+            1 => new SongRecord(
+                'JeffSpeed68',
+                'Snowman',
+                '12.51',
+                new \DateTime('2015-12-10 10:45:00'),
+                'http//ccmixter.org/files/JeffSpeed68/52419',
+                'by-nc',
+                'ccmixter'
             ),
         );
 
