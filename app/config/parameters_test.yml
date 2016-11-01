@@ -1,2 +1,3 @@
 parameters:
     api_client_class: CCMusicSearchBundle\Service\ApiClientStub
+    freemusicarchive.api_key: FAKE_API_KEY

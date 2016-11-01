@@ -14,12 +14,17 @@ class ApiClient implements ApiClientInterface
     }
 
 
-    public function performRequest($baseUri, $url)
+    public function performRequest($baseUri, $url, $xml = false)
     {
         try {
             $client = new Client(array('base_uri' => $baseUri));
             $data = $client->get($url)->getBody()->getContents();
-            return json_decode($data, true);
+
+            if($xml) {
+                return json_decode(json_encode(simplexml_load_string($data)), true);
+            } else {
+                return json_decode($data, true);
+            }
         } catch (\Exception $e) {
             $this->logger->error($e->getMessage() . ' (' . $baseUri . '/' . $url . ') ');
             return array();

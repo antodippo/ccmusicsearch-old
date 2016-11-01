@@ -5,5 +5,5 @@ namespace CCMusicSearchBundle\Service;
 
 interface ApiClientInterface
 {
-    public function performRequest($baseUri, $url);
+    public function performRequest($baseUri, $url, $xml = false);
 }

@@ -17,6 +17,10 @@ services:
         class: CCMusicSearchBundle\Service\CCMixterApiService
         arguments: [ @ccmusic_search.api_client, %ccmixter.base_uri%, %ccmixter.api_key%, %ccmixter.limit%, %cc_licenses% ]
 
+    ccmusic_search.service.freemusicarchive_api_service:
+        class: CCMusicSearchBundle\Service\FreeMusicArchiveApiService
+        arguments: [ @ccmusic_search.api_client, %freemusicarchive.base_uri%, %freemusicarchive.api_key%, %freemusicarchive.limit%, %cc_licenses% ]
+
     ccmusic_search.twig.license_button_extension:
         class: CCMusicSearchBundle\Twig\LicenseButtonExtension
         arguments: [ %cc_license_url%, %cc_license_image%, %cc_licenses%, @logger ]
