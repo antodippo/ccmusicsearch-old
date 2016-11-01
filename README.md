@@ -11,5 +11,6 @@ At the moment it uses these web services API to find music that has been release
 - [Jamendo](https://www.jamendo.com/)
 - [SoundCloud](https://soundcloud.com/)
 - [CCMixter](http://ccmixter.org/)
+- [FreeMusicArchive](https://freemusicarchive.org/)
  
 It's based on [Symfony 2](https://symfony.com/) PHP framework, and on [Bootstrap](http://getbootstrap.com/) front-end framework.
