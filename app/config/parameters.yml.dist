@@ -25,6 +25,7 @@ parameters:
         jamendo: ccmusic_search.service.soundcloud_api_service
         soundcloud: ccmusic_search.service.jamendo_api_service
         ccmixter: ccmusic_search.service.ccmixter_api_service
+        freemusicarchive: ccmusic_search.service.freemusicarchive_api_service
 
     jamendo.base_uri: https://api.jamendo.com/v3.0/tracks/
     jamendo.api_key: 45f790fc
@@ -37,3 +38,7 @@ parameters:
     ccmixter.base_uri: http://ccmixter.org/api/
     ccmixter.api_key: no_api_key
     ccmixter.limit: 30
+
+    freemusicarchive.base_uri: https://freemusicarchive.org/api/get/
+    freemusicarchive.api_key: N4QX56TDJ2LGL4OG
+    freemusicarchive.limit: 30
