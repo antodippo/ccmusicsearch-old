@@ -1,0 +1,7 @@
+index:
+    path: /
+    controller: App\Controller\CCMusicSearchController::index
+
+about:
+    path: /about
+    controller: App\Controller\CCMusicSearchController::about

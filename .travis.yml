@@ -1,16 +1,15 @@
 language: php
 
-php:
-  - 5.5
-  - 5.6
+services:
+  - docker
 
-before_script:
-  - composer self-update
-  - composer install
+before_install:
+  - docker-compose build
+  - docker-compose run --rm ccmusicsearch composer install
+  - docker-compose run --rm ccmusicsearch bin/console cache:clear --env=test
 
 script:
-  - mkdir -p build/logs
-  - phpunit --coverage-clover build/logs/clover.xml -c app
+  - docker-compose run --rm ccmusicsearch vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
-  - bin/coveralls -v
+  - bash <(curl -s https://codecov.io/bash)
