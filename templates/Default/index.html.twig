@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            Search for Creative Commons music
+        </div>
+    </div>
+
+    <div class="row">
+        {{ form_start(form, {'attr': {'class': 'search-form form-inline'}}) }}
+        <div class="col-md-5 col-md-offset-3">
+            {{ form_widget(form.searchString, {'attr': {'class': 'form-control', 'placeholder': 'Tag, genre, style, instrument...' }}) }}
+        </div>
+        <div class="col-md-1">
+            {{ form_widget(form.submit, {'label': 'Search', 'attr': {'class': 'btn btn-default'}}) }}
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+    <br/>
+
+    {% if form.vars.submitted %}
+        <div class="search-results">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Author</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                        <th>Date</th>
+                        <th>Link</th>
+                        <th>License</th>
+                        <th>Service</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for song in songs %}
+                        <tr>
+                            <td>{{ song.author }}</td>
+                            <td>{{ song.title }}</td>
+                            <td width="80px">{{ song.duration }}</td>
+                            <td width="80px">{{ song.date|date('Y/m/d') }}</td>
+                            <td width="80px">
+                                <a href='{{ song.link }}' target='_blank'>
+                                    <span class="glyphicon glyphicon-share"></span> Listen
+                                </a>
+                            </td>
+                            <td width="100px">
+                                {% if getButtonImageUrl(song.license) %}
+                                <a href="{{ getButtonUrl(song.license) }}" target="_blank">
+                                    <img src="{{ getButtonImageUrl(song.license) }}" />
+                                </a>
+                                {% endif %}
+                            </td>
+                            <td width="100px">
+                                <img class="service-logo" src="{{ asset('logos/' ~ song.service ~ '.png') }}">
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script language="JavaScript">
+        $(document).ready( function () {
+            $('.results-table').DataTable({
+                "pageLength": 25,
+                "language": {
+                    "search": "Quick search in results: ",
+                    "emptyTable": "No songs found"
+                }
+            });
+        } );
+    </script>
+{% endblock %}

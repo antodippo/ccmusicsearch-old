@@ -1,7 +1,7 @@
 # #CCMusic Search
 
 [![Build Status](https://travis-ci.org/antodippo/ccmusicsearch.svg?branch=master)](https://travis-ci.org/antodippo/ccmusicsearch)
-[![Coverage Status](https://coveralls.io/repos/antodippo/ccmusicsearch/badge.svg?branch=master&service=github)](https://coveralls.io/github/antodippo/ccmusicsearch?branch=master)
+[![codecov](https://codecov.io/gh/antodippo/ccmusicsearch/branch/master/graph/badge.svg)](https://codecov.io/gh/antodippo/ccmusicsearch)
 
 CCMusic Search is a simple search engine for [Creative Commons](http://creativecommons.org/about) music: 
 [http://ccmusicsearch.antonellodippolito.com/](http://ccmusicsearch.antonellodippolito.com/)
@@ -13,4 +13,4 @@ At the moment it uses these web services API to find music that has been release
 - [CCMixter](http://ccmixter.org/)
 - [FreeMusicArchive](https://freemusicarchive.org/)
  
-It's based on [Symfony 2](https://symfony.com/) PHP framework, and on [Bootstrap](http://getbootstrap.com/) front-end framework.
+It's based on [Symfony](https://symfony.com/) PHP framework, and on [Bootstrap](http://getbootstrap.com/) front-end framework.

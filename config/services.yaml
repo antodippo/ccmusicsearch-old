@@ -1,0 +1,78 @@
+parameters:
+    #TODO put Google Analytics code and api keys in ENV vars
+    google_analytics_code: '%env(GOOGLE_ANALYTICS_CODE)%'
+
+    cc_licenses: [by, by-nc, by-nd, by-sa, by-nc-nd, by-nc-sa]
+    cc_license_image: https://i.creativecommons.org/l/license_type/4.0/80x15.png
+    cc_license_url: http://creativecommons.org/licenses/license_type/4.0/
+
+    api_services:
+        jamendo: 'App\Service\JamendoApiService'
+        soundcloud: 'App\Service\SoundcloudApiService'
+        ccmixter: 'App\Service\CCMixterApiService'
+        freemusicarchive: 'App\Service\FreeMusicArchiveApiService'
+
+    jamendo.base_uri: https://api.jamendo.com/v3.0/tracks/
+    jamendo.api_key: '%env(JAMENDO_API_KEY)%'
+    jamendo.limit: 50
+
+    soundcloud.base_uri: http://api.soundcloud.com/tracks/
+    soundcloud.api_key: '%env(SOUNDCLOUD_API_KEY)%'
+    soundcloud.limit: 10
+
+    ccmixter.base_uri: http://ccmixter.org/api/
+    ccmixter.api_key: '%env(CCMIXTER_API_KEY)%'
+    ccmixter.limit: 30
+
+    freemusicarchive.base_uri: https://freemusicarchive.org/api/get/
+    freemusicarchive.api_key: '%env(FREEMUSICARCHIVE_API_KEY)%'
+    freemusicarchive.limit: 30
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    App\Service\:
+        resource: '../src/Service'
+
+    App\Controller\CCMusicSearchController:
+        tags: ['controller.service_arguments']
+
+    App\Service\ApiClient: '@App\Service\GuzzleApiClient'
+
+    App\Service\JamendoApiService:
+        arguments:
+            $baseUri: '%jamendo.base_uri%'
+            $apiKey: '%jamendo.api_key%'
+            $limit: '%jamendo.limit%'
+            $licenses: '%cc_licenses%'
+
+    App\Service\SoundcloudApiService:
+        arguments:
+            $baseUri: '%soundcloud.base_uri%'
+            $apiKey: '%soundcloud.api_key%'
+            $limit: '%soundcloud.limit%'
+            $licenses: '%cc_licenses%'
+
+    App\Service\CCMixterApiService:
+        arguments:
+            $baseUri: '%ccmixter.base_uri%'
+            $apiKey: '%ccmixter.api_key%'
+            $limit: '%ccmixter.limit%'
+            $licenses: '%cc_licenses%'
+
+    App\Service\FreeMusicArchiveApiService:
+        arguments:
+            $baseUri: '%freemusicarchive.base_uri%'
+            $apiKey: '%freemusicarchive.api_key%'
+            $limit: '%freemusicarchive.limit%'
+            $licenses: '%cc_licenses%'
+
+    App\Twig\LicenseButtonExtension:
+        arguments:
+            $baseUrl: '%cc_license_url%'
+            $baseImageUrl: '%cc_license_image%'
+            $licenses: '%cc_licenses%'
+

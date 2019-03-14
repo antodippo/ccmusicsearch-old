@@ -1,0 +1,7 @@
+parameters:
+
+services:
+    _defaults:
+        public: true
+
+    App\Service\ApiClient: '@App\Service\StubApiClient'

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  ccmusicsearch:
+    working_dir: /var/www/ccmusicsearch
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - 8081:80
+    volumes:
+      - .:/var/www/ccmusicsearch

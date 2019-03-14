@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>About</h1>
+
+    CCMusic Search is a simple search engine for
+    <a href="http://creativecommons.org/about" target="_blank">Creative Commons</a> music.<br/>
+    At the moment it uses these web services API to find music that has been released under CC:
+    <ul>
+        <li><a href="https://www.jamendo.com/" target="_blank">Jamendo</a></li>
+        <li><a href="https://soundcloud.com/" target="_blank">SoundCloud</a></li>
+        <li><a href="http://ccmixter.org/" target="_blank">CCMixter</a></li>
+        <li><a href="https://freemusicarchive.org/" target="_blank">Free Music Archive</a></li>
+    </ul>
+    <br/>
+    It's based on <a href="https://symfony.com/" target="_blank">Symfony</a> PHP framework, and on
+    <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> front-end framework, you can find the code here:
+    <a href="https://github.com/antodippo/ccmusicsearch" target="_blank">https://github.com/antodippo/ccmusicsearch</a>
+
+{% endblock %}

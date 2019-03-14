@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker-compose run --rm ccmusicsearch composer install
+docker-compose run --rm ccmusicsearch bin/console cache:clear --env=test
+docker-compose run --rm ccmusicsearch vendor/bin/phpunit
