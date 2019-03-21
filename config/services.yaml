@@ -1,9 +1,8 @@
 parameters:
-    #TODO put Google Analytics code and api keys in ENV vars
     google_analytics_code: '%env(GOOGLE_ANALYTICS_CODE)%'
 
     cc_licenses: [by, by-nc, by-nd, by-sa, by-nc-nd, by-nc-sa]
-    cc_license_image: https://i.creativecommons.org/l/license_type/4.0/80x15.png
+    cc_license_image: https://i.creativecommons.org/l/license_type/4.0/88x31.png
     cc_license_url: http://creativecommons.org/licenses/license_type/4.0/
 
     api_services:
@@ -18,15 +17,15 @@ parameters:
 
     soundcloud.base_uri: http://api.soundcloud.com/tracks/
     soundcloud.api_key: '%env(SOUNDCLOUD_API_KEY)%'
-    soundcloud.limit: 10
+    soundcloud.limit: 15
 
     ccmixter.base_uri: http://ccmixter.org/api/
     ccmixter.api_key: '%env(CCMIXTER_API_KEY)%'
-    ccmixter.limit: 30
+    ccmixter.limit: 50
 
     freemusicarchive.base_uri: https://freemusicarchive.org/api/get/
     freemusicarchive.api_key: '%env(FREEMUSICARCHIVE_API_KEY)%'
-    freemusicarchive.limit: 30
+    freemusicarchive.limit: 50
 
 services:
     _defaults:

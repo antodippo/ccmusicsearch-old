@@ -5,7 +5,9 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="A simple search engine for Creative Commons music">
+        <meta name="description" content="A simple search engine for Creative Commons music, which fetches songs from major
+            Creative Commons music services (Jamendo, Soundcloud, CCMixter, FreeMusicArchive...)">
+        <meta name="keywords" content="creative commons,copyleft,music,search,free,jamendo,soundcloud,ccmixter,freemusicarchive">
 
         <title>{% block title %}CC Music Search{% endblock %}</title>
 
@@ -38,7 +40,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ path('index') }}">CC Music search</a>
+                    <a class="navbar-brand" href="{{ path('index') }}">
+                        <img class="cc-logo" src="{{ asset('logos/cc.png') }}">
+                    </a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -53,15 +57,9 @@
             </div>
         </nav>
 
-        <br/>
-        <br/>
-
         <div class="container">
             {% block body %}{% endblock %}
         </div>
-
-        <br/>
-        <br/>
 
         <footer class="footer">
             <div class="container">
