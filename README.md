@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/antodippo/ccmusicsearch/branch/master/graph/badge.svg)](https://codecov.io/gh/antodippo/ccmusicsearch)
 
 CCMusic Search is a simple search engine for [Creative Commons](http://creativecommons.org/about) music: 
-[http://ccmusicsearch.antonellodippolito.com/](http://ccmusicsearch.antonellodippolito.com/)
+[http://ccmusicsearch.com/](http://ccmusicsearch.com/)
  
 At the moment it uses these web services API to find music that has been released under CC:
 
