@@ -23,7 +23,7 @@
 
     {% if form.vars.submitted %}
         <div class="search-results">
-            <table class="results-table">
+            <table class="results-table table-striped">
                 <thead>
                     <tr>
                         <th>Author</th>
@@ -43,7 +43,7 @@
                             <td width="80px">{{ song.duration }}</td>
                             <td width="80px">{{ song.date|date('Y/m/d') }}</td>
                             <td width="80px">
-                                <a href='{{ song.link }}' target='_blank'>
+                                <a href='{{ song.link }}' target='_blank' class="btn btn-default btn-sm">
                                     <span class="glyphicon glyphicon-share"></span> Listen
                                 </a>
                             </td>
