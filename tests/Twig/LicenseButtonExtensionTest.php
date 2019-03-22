@@ -18,7 +18,7 @@ class LicenseButtonExtensionTest extends TestCase
         $SUT = new LicenseButtonExtension(
             'http://creativecommons.org/licenses/license_type/4.0/',
             'https://i.creativecommons.org/l/license_type/4.0/80x15.png',
-            array('by', 'by-nc', 'by-nd', 'by-sa', 'by-nc-nd', 'by-nc-sa'),
+            ['by', 'by-nc', 'by-nd', 'by-sa', 'by-nc-nd', 'by-nc-sa'],
             $logger
         );
 
@@ -27,15 +27,16 @@ class LicenseButtonExtensionTest extends TestCase
 
     public function licenseButtonUrlProvider()
     {
-        return array(
-            array('by', 'http://creativecommons.org/licenses/by/4.0/'),
-            array('cc-by', 'http://creativecommons.org/licenses/by/4.0/'),
-            array('by-nc', 'http://creativecommons.org/licenses/by-nc/4.0/'),
-            array('cc-by-nc', 'http://creativecommons.org/licenses/by-nc/4.0/'),
-            array('by-nc-nd', 'http://creativecommons.org/licenses/by-nc-nd/4.0/'),
-            array('cc-by-nc-nd', 'http://creativecommons.org/licenses/by-nc-nd/4.0/'),
-            array('wrong-license', null)
-        );
+        return [
+            ['by', 'http://creativecommons.org/licenses/by/4.0/'],
+            ['cc-by', 'http://creativecommons.org/licenses/by/4.0/'],
+            ['by-nc', 'http://creativecommons.org/licenses/by-nc/4.0/'],
+            ['cc-by-nc', 'http://creativecommons.org/licenses/by-nc/4.0/'],
+            ['by-nc-nd', 'http://creativecommons.org/licenses/by-nc-nd/4.0/'],
+            ['cc-by-nc-nd', 'http://creativecommons.org/licenses/by-nc-nd/4.0/'],
+            ['wrong-license', 'https://creativecommons.org'],
+            [null, 'https://creativecommons.org']
+        ];
     }
 
     /**
@@ -49,7 +50,7 @@ class LicenseButtonExtensionTest extends TestCase
         $SUT = new LicenseButtonExtension(
             'http://creativecommons.org/licenses/license_type/4.0/',
             'https://i.creativecommons.org/l/license_type/4.0/80x15.png',
-            array('by', 'by-nc', 'by-nd', 'by-sa', 'by-nc-nd', 'by-nc-sa'),
+            ['by', 'by-nc', 'by-nd', 'by-sa', 'by-nc-nd', 'by-nc-sa'],
             $logger
         );
 
@@ -58,15 +59,16 @@ class LicenseButtonExtensionTest extends TestCase
 
     public function licenseButtonImageUrlProvider()
     {
-        return array(
-            array('by', 'https://i.creativecommons.org/l/by/4.0/80x15.png'),
-            array('cc-by', 'https://i.creativecommons.org/l/by/4.0/80x15.png'),
-            array('by-nc', 'https://i.creativecommons.org/l/by-nc/4.0/80x15.png'),
-            array('cc-by-nc', 'https://i.creativecommons.org/l/by-nc/4.0/80x15.png'),
-            array('by-nc-nd', 'https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png'),
-            array('cc-by-nc-nd', 'https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png'),
-            array('wrong-license', null)
-        );
+        return [
+            ['by', 'https://i.creativecommons.org/l/by/4.0/80x15.png'],
+            ['cc-by', 'https://i.creativecommons.org/l/by/4.0/80x15.png'],
+            ['by-nc', 'https://i.creativecommons.org/l/by-nc/4.0/80x15.png'],
+            ['cc-by-nc', 'https://i.creativecommons.org/l/by-nc/4.0/80x15.png'],
+            ['by-nc-nd', 'https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png'],
+            ['cc-by-nc-nd', 'https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png'],
+            ['wrong-license', 'https://mirrors.creativecommons.org/presskit/cc.primary.srr.gif'],
+            [null, 'https://mirrors.creativecommons.org/presskit/cc.primary.srr.gif']
+        ];
     }
 
 
@@ -75,8 +77,8 @@ class LicenseButtonExtensionTest extends TestCase
         $logger = \Phake::mock('Symfony\Bridge\Monolog\Logger');
         \Phake::when($logger)->error(\Phake::anyParameters())->thenReturn(true);
 
-        $SUT = new LicenseButtonExtension('FAKE_BASE_URL', 'FAKE_BASE_IMAGE_URL', array(), $logger);
-        $expectedFunctionList = array('getButtonUrl', 'getButtonImageUrl');
+        $SUT = new LicenseButtonExtension('FAKE_BASE_URL', 'FAKE_BASE_IMAGE_URL', [], $logger);
+        $expectedFunctionList = ['getButtonUrl', 'getButtonImageUrl'];
         $functionList = array_keys($SUT->getFunctions());
 
         $this->assertEquals($expectedFunctionList, $functionList);

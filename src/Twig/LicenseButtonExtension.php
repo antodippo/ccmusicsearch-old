@@ -35,28 +35,28 @@ class LicenseButtonExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            'getButtonUrl' => new \Twig_Function('getButtonUrl', array($this, 'getButtonUrl')),
-            'getButtonImageUrl' => new \Twig_Function('getButtonImageUrl', array($this, 'getButtonImageUrl'))
+            'getButtonUrl' => new \Twig_Function('getButtonUrl', [$this, 'getButtonUrl']),
+            'getButtonImageUrl' => new \Twig_Function('getButtonImageUrl', [$this, 'getButtonImageUrl'])
         ];
     }
 
-    public function getButtonUrl(string $license): ?string
+    public function getButtonUrl(?string $license): ?string
     {
         $license = str_replace('cc-', '', $license);
         if(!in_array($license, $this->licenses)) {
             $this->logger->error('License \'' . $license . '\' not found');
-            return null;
+            return 'https://creativecommons.org';
         }
 
         return str_replace('license_type', $license, $this->baseUrl);
     }
 
-    public function getButtonImageUrl(string $license): ?string
+    public function getButtonImageUrl(?string $license): ?string
     {
         $license = str_replace('cc-', '', $license);
         if(!in_array($license, $this->licenses)) {
             $this->logger->error('License \'' . $license . '\' not found');
-            return null;
+            return 'https://mirrors.creativecommons.org/presskit/cc.primary.srr.gif';
         }
 
         return str_replace('license_type', $license, $this->baseImageUrl);

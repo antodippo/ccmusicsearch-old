@@ -33,15 +33,17 @@ class FreeMusicArchiveApiService extends AbstractApiService
 
             if (is_array($data) && array_key_exists('dataset', $data)) {
                 foreach($data['dataset']['value'] as $song) {
-                    $songRecords[] = new SongRecord(
-                        $song['artist_name'],
-                        $song['track_title'],
-                        $this->formatDuration($song['track_duration']),
-                        \DateTime::createFromFormat('m/d/Y h:i:s A', $song['track_date_created']),
-                        $song['track_url'],
-                        $this->licenseUrlToLicenseCode($song['license_url']),
-                        'freemusicarchive'
-                    );
+                    if (is_string($song['track_url'])) {
+                        $songRecords[] = new SongRecord(
+                            $song['artist_name'],
+                            $song['track_title'],
+                            $this->formatDuration($song['track_duration']),
+                            \DateTime::createFromFormat('m/d/Y h:i:s A', $song['track_date_created']),
+                            $song['track_url'],
+                            $this->licenseUrlToLicenseCode($song['license_url']),
+                            'freemusicarchive'
+                        );
+                    }
                 }
             }
         }
