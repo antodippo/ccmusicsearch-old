@@ -12,6 +12,11 @@ class SoundcloudApiService extends AbstractApiService
     {
         $data = [];
         foreach($this->licenses as $license) {
+
+            // because of this:
+            // https://stackoverflow.com/questions/34978178/soundcloud-tracks-api-with-license-cc-by-nc-returning-400-bad-request
+            if ($license === 'by-nc') break;
+
             $uri = '?client_id=' . $this->apiKey .
                 '&limit=' . $this->limit .
                 '&license=cc-' . $license .
