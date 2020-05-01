@@ -2,19 +2,25 @@
     "type": "project",
     "license": "proprietary",
     "require": {
-        "php": "^7.2",
+        "php": "^7.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "guzzlehttp/guzzle": "^6.3",
-        "symfony/asset": "4.2.*",
-        "symfony/console": "4.2.*",
-        "symfony/dotenv": "4.2.*",
+        "symfony/asset": "^4.4",
+        "symfony/console": "^4.4",
+        "symfony/dotenv": "^4.4",
         "symfony/flex": "^1.1",
-        "symfony/form": "4.2.*",
-        "symfony/framework-bundle": "4.2.*",
+        "symfony/form": "^4.4",
+        "symfony/framework-bundle": "^4.4",
         "symfony/monolog-bundle": "^3.3",
-        "symfony/twig-bundle": "4.2.*",
-        "symfony/yaml": "4.2.*"
+        "symfony/twig-bundle": "^4.4",
+        "symfony/yaml": "^4.4"
+    },
+    "require-dev": {
+        "phake/phake": "^3.1",
+        "phpunit/phpunit": "^8.0",
+        "symfony/browser-kit": "^4.4",
+        "symfony/css-selector": "^4.4"
     },
     "config": {
         "preferred-install": {
@@ -58,13 +64,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "4.2.*"
+            "require": "4.4.*"
         }
-    },
-    "require-dev": {
-        "phake/phake": "^3.1",
-        "phpunit/phpunit": "^8.0",
-        "symfony/browser-kit": "4.2.*",
-        "symfony/css-selector": "4.2.*"
     }
 }
