@@ -4,6 +4,7 @@ namespace App\Twig;
 
 use Psr\Log\LoggerInterface;
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 class LicenseButtonExtension extends AbstractExtension
 {
@@ -35,8 +36,8 @@ class LicenseButtonExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            'getButtonUrl' => new \Twig_Function('getButtonUrl', [$this, 'getButtonUrl']),
-            'getButtonImageUrl' => new \Twig_Function('getButtonImageUrl', [$this, 'getButtonImageUrl'])
+            'getButtonUrl' => new TwigFunction('getButtonUrl', [$this, 'getButtonUrl']),
+            'getButtonImageUrl' => new TwigFunction('getButtonImageUrl', [$this, 'getButtonImageUrl'])
         ];
     }
 

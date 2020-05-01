@@ -1,15 +1,15 @@
-FROM php:7.2-apache
+FROM php:7.4-apache
 
 COPY . /var/www/ccmusicsearch
 COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 RUN pecl channel-update pecl.php.net
-RUN pecl install xdebug-2.6.1
+RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
 
 RUN apt-get update
 RUN apt-get install -y libzip-dev zip \
-    && docker-php-ext-configure zip --with-libzip \
+    && docker-php-ext-configure zip \
     && docker-php-ext-install zip
 
 RUN chown -R www-data:www-data /var/www/ccmusicsearch
