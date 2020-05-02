@@ -13,20 +13,14 @@ class ApiServiceFactory
     /** @var CCMixterApiService */
     private $CCMixterApiService;
 
-    /** @var FreeMusicArchiveApiService */
-    private $freeMusicArchiveApiService;
-
     public function __construct(
         JamendoApiService $jamendoApiService,
         SoundcloudApiService $soundcloudApiService,
-        CCMixterApiService $CCMixterApiService,
-        FreeMusicArchiveApiService $freeMusicArchiveApiService
+        CCMixterApiService $CCMixterApiService
     ) {
-
         $this->jamendoApiService = $jamendoApiService;
         $this->soundcloudApiService = $soundcloudApiService;
         $this->CCMixterApiService = $CCMixterApiService;
-        $this->freeMusicArchiveApiService = $freeMusicArchiveApiService;
     }
 
     public function createService(string $serviceName): AbstractApiService
@@ -38,8 +32,6 @@ class ApiServiceFactory
                 return $this->soundcloudApiService;
             case 'App\Service\CCMixterApiService':
                 return $this->CCMixterApiService;
-            case 'App\Service\FreeMusicArchiveApiService':
-                return $this->freeMusicArchiveApiService;
             default;
                 throw new \InvalidArgumentException('Service \'' . $serviceName . '\' does not exist');
         }
