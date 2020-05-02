@@ -9,7 +9,6 @@ parameters:
         jamendo: 'App\Service\JamendoApiService'
         soundcloud: 'App\Service\SoundcloudApiService'
         ccmixter: 'App\Service\CCMixterApiService'
-        freemusicarchive: 'App\Service\FreeMusicArchiveApiService'
 
     jamendo.base_uri: https://api.jamendo.com/v3.0/tracks/
     jamendo.api_key: '%env(JAMENDO_API_KEY)%'
@@ -22,10 +21,6 @@ parameters:
     ccmixter.base_uri: http://ccmixter.org/api/
     ccmixter.api_key: '%env(CCMIXTER_API_KEY)%'
     ccmixter.limit: 50
-
-    freemusicarchive.base_uri: https://freemusicarchive.org/api/get/
-    freemusicarchive.api_key: '%env(FREEMUSICARCHIVE_API_KEY)%'
-    freemusicarchive.limit: 50
 
 services:
     _defaults:
@@ -60,13 +55,6 @@ services:
             $baseUri: '%ccmixter.base_uri%'
             $apiKey: '%ccmixter.api_key%'
             $limit: '%ccmixter.limit%'
-            $licenses: '%cc_licenses%'
-
-    App\Service\FreeMusicArchiveApiService:
-        arguments:
-            $baseUri: '%freemusicarchive.base_uri%'
-            $apiKey: '%freemusicarchive.api_key%'
-            $limit: '%freemusicarchive.limit%'
             $licenses: '%cc_licenses%'
 
     App\Twig\LicenseButtonExtension:
