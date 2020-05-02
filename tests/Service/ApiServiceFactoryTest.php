@@ -24,20 +24,20 @@ class ApiServiceFactoryTest extends TestCase
 
     public function testItCreatesApiServices()
     {
-        $apiService = $this->apiServiceFactory->createService('App\Service\JamendoApiService');
-        $this->assertTrue($apiService instanceof JamendoApiService);
+        $apiService = $this->apiServiceFactory->get('App\Service\JamendoApiService');
+        $this->assertInstanceOf(JamendoApiService::class, $apiService);
 
-        $apiService = $this->apiServiceFactory->createService('App\Service\SoundcloudApiService');
-        $this->assertTrue($apiService instanceof SoundcloudApiService);
+        $apiService = $this->apiServiceFactory->get('App\Service\SoundcloudApiService');
+        $this->assertInstanceOf(SoundcloudApiService::class, $apiService);
 
-        $apiService = $this->apiServiceFactory->createService('App\Service\CCMixterApiService');
-        $this->assertTrue($apiService instanceof CCMixterApiService);
+        $apiService = $this->apiServiceFactory->get('App\Service\CCMixterApiService');
+        $this->assertInstanceOf(CCMixterApiService::class, $apiService);
     }
 
     public function testItThrowsAnException()
     {
         $this->expectException('\InvalidArgumentException');
         $this->expectExceptionMessage('Service \'foo\' does not exist');
-        $this->apiServiceFactory->createService('foo');
+        $this->apiServiceFactory->get('foo');
     }
 }

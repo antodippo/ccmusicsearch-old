@@ -12,15 +12,15 @@ parameters:
 
     jamendo.base_uri: https://api.jamendo.com/v3.0/tracks/
     jamendo.api_key: '%env(JAMENDO_API_KEY)%'
-    jamendo.limit: 50
+    jamendo.limit: 30
 
     soundcloud.base_uri: http://api.soundcloud.com/tracks/
     soundcloud.api_key: '%env(SOUNDCLOUD_API_KEY)%'
-    soundcloud.limit: 15
+    soundcloud.limit: 20
 
     ccmixter.base_uri: http://ccmixter.org/api/
     ccmixter.api_key: '%env(CCMIXTER_API_KEY)%'
-    ccmixter.limit: 50
+    ccmixter.limit: 30
 
 services:
     _defaults:
@@ -34,14 +34,17 @@ services:
     App\Controller\CCMusicSearchController:
         tags: ['controller.service_arguments']
 
-    App\Service\ApiClient: '@App\Service\GuzzleApiClient'
+    App\Service\ApiServiceFactory:
+        arguments:
+            $jamendoApiService: '@App\Service\JamendoApiService'
+            $soundcloudApiService: '@App\Service\SoundcloudApiService'
+            $CCMixterApiService: '@App\Service\CCMixterApiService'
 
     App\Service\JamendoApiService:
         arguments:
             $baseUri: '%jamendo.base_uri%'
             $apiKey: '%jamendo.api_key%'
             $limit: '%jamendo.limit%'
-            $licenses: '%cc_licenses%'
 
     App\Service\SoundcloudApiService:
         arguments:
@@ -53,9 +56,11 @@ services:
     App\Service\CCMixterApiService:
         arguments:
             $baseUri: '%ccmixter.base_uri%'
-            $apiKey: '%ccmixter.api_key%'
             $limit: '%ccmixter.limit%'
-            $licenses: '%cc_licenses%'
+
+    App\Service\SearchPerformer:
+        arguments:
+            $apiServices: '%api_services%'
 
     App\Twig\LicenseButtonExtension:
         arguments:
@@ -63,3 +68,5 @@ services:
             $baseImageUrl: '%cc_license_image%'
             $licenses: '%cc_licenses%'
 
+    GuzzleHttp\Client: ~
+    GuzzleHttp\ClientInterface: '@GuzzleHttp\Client'

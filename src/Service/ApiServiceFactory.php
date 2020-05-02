@@ -1,29 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Service;
 
 class ApiServiceFactory
 {
-    /** @var JamendoApiService */
-    private $jamendoApiService;
-
-    /** @var SoundcloudApiService */
-    private $soundcloudApiService;
-
-    /** @var CCMixterApiService */
-    private $CCMixterApiService;
+    private ApiService $jamendoApiService;
+    private ApiService $soundcloudApiService;
+    private ApiService $CCMixterApiService;
 
     public function __construct(
-        JamendoApiService $jamendoApiService,
-        SoundcloudApiService $soundcloudApiService,
-        CCMixterApiService $CCMixterApiService
+        ApiService $jamendoApiService,
+        ApiService $soundcloudApiService,
+        ApiService $CCMixterApiService
     ) {
         $this->jamendoApiService = $jamendoApiService;
         $this->soundcloudApiService = $soundcloudApiService;
         $this->CCMixterApiService = $CCMixterApiService;
     }
 
-    public function createService(string $serviceName): AbstractApiService
+    public function get(string $serviceName): ApiService
     {
         switch ($serviceName) {
             case 'App\Service\JamendoApiService':

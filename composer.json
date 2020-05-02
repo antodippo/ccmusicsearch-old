@@ -5,6 +5,8 @@
         "php": "^7.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-simplexml": "*",
         "guzzlehttp/guzzle": "^6.3",
         "symfony/asset": "^4.4",
         "symfony/console": "^4.4",
