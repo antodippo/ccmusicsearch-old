@@ -10,3 +10,5 @@ services:
         class: App\Tests\Service\StubApiService
     App\Service\CCMixterApiService:
         class: App\Tests\Service\StubApiService
+    App\Service\Icons8ApiService:
+        class: App\Tests\Service\StubApiService

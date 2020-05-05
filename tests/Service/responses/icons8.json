@@ -1,0 +1,223 @@
+{
+  "tracks": [
+    {
+      "id": "5a44ddc30b7a6a3f8bd51668",
+      "name": "Air",
+      "preview": {
+        "id": "5df7d19065bf6e015b210935",
+        "media_format": "mp3",
+        "name": "4e5bd8bf-632e-42a9-a3dc-02521e276950.mp3",
+        "channels": null,
+        "size": 357658,
+        "sample_rate": null,
+        "url": "https://music-cdn.icons8.com/preview_low/21/4e5bd8bf-632e-42a9-a3dc-02521e276950.mp3",
+        "created_at": 1576522128,
+        "updated_at": 1576522128
+      },
+      "waveform": {
+        "height": 400,
+        "width": 1280,
+        "url": "https://music-cdn.icons8.com/waveform/510/789ec2f0-0824-4b02-a1f2-16566008d817.png"
+      },
+      "state": "processed",
+      "pro": false,
+      "content_id": false,
+      "bpm": 115,
+      "rating": {
+        "sound": 84,
+        "melody": 80,
+        "curator_score": 30,
+        "total": 194
+      },
+      "duration": 44.641292517006804,
+      "user": {
+        "id": "5a4496330b7a6a3f8bd51624",
+        "pretty_id": "ilya-truhanov-1",
+        "name": "Ilya Truhanov"
+      },
+      "genres": [
+        {
+          "id": "5a3958260b7a6a219a2cf5f3",
+          "pretty_id": "acoustic",
+          "title": "Acoustic"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf600",
+          "pretty_id": "folk",
+          "title": "Folk"
+        }
+      ],
+      "moods": [
+        {
+          "id": "5a3958260b7a6a219a2cf633",
+          "pretty_id": "calm",
+          "title": "Calm"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf634",
+          "pretty_id": "carefree",
+          "title": "Carefree"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf635",
+          "pretty_id": "chill",
+          "title": "Chill"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "5a3958260b7a6a219a2cf615",
+          "pretty_id": "acoustic-drums",
+          "title": "Acoustic Drums"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf616",
+          "pretty_id": "acoustic-guitar",
+          "title": "Acoustic Guitar"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf626",
+          "pretty_id": "percussion",
+          "title": "Percussion"
+        }
+      ],
+      "tempos": [
+        {
+          "id": "5a3958260b7a6a219a2cf69f",
+          "pretty_id": "bpm-medium",
+          "title": "BPM: Medium"
+        }
+      ],
+      "tags": [
+        {
+          "id": "5a3958260b7a6a219a2cf655",
+          "pretty_id": "beach",
+          "title": "Beach"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf664",
+          "pretty_id": "easy-listening",
+          "title": "Easy Listening"
+        }
+      ],
+      "themes": [
+        {
+          "id": "5a3958260b7a6a219a2cf6a4",
+          "pretty_id": "adventure",
+          "title": "Adventure"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf6a6",
+          "pretty_id": "business",
+          "title": "Business"
+        }
+      ],
+      "cover": {
+        "id": "5abd0d39efce40001d9caaaf",
+        "thumb_url": "https://music-cdn.icons8.com/cover_preview/84/e8c46d3c-8261-44e7-98ab-e4894754d2a6.jpg"
+      },
+      "created_at": 1514462660,
+      "updated_at": 1526570364
+    },
+    {
+      "id": "5a44e1220b7a6a3f8bd51699",
+      "name": "Pancakes",
+      "preview": {
+        "id": "5df7d1a065bf6e015b210937",
+        "media_format": "mp3",
+        "name": "48e435bb-572c-415f-92af-8a5c788766c3.mp3",
+        "channels": null,
+        "size": 2212637,
+        "sample_rate": null,
+        "url": "https://music-cdn.icons8.com/preview_low/577/48e435bb-572c-415f-92af-8a5c788766c3.mp3",
+        "created_at": 1576522144,
+        "updated_at": 1576522144
+      },
+      "waveform": {
+        "height": 400,
+        "width": 1280,
+        "url": "https://music-cdn.icons8.com/waveform/776/1162e623-37ce-478a-bb2e-59dd8beb48c6.png"
+      },
+      "state": "processed",
+      "pro": true,
+      "content_id": false,
+      "bpm": 120,
+      "rating": {
+        "sound": 84,
+        "melody": 81,
+        "curator_score": 0,
+        "total": 165
+      },
+      "duration": 276.5,
+      "user": {
+        "id": "5a4496330b7a6a3f8bd51624",
+        "pretty_id": "ilya-truhanov-1",
+        "name": "Ilya Truhanov"
+      },
+      "genres": [
+        {
+          "id": "5a3958260b7a6a219a2cf5f3",
+          "pretty_id": "acoustic",
+          "title": "Acoustic"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf5fa",
+          "pretty_id": "country",
+          "title": "Country"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf600",
+          "pretty_id": "folk",
+          "title": "Folk"
+        }
+      ],
+      "moods": [
+        {
+          "id": "5a3958260b7a6a219a2cf632",
+          "pretty_id": "beautiful",
+          "title": "Beautiful"
+        },
+        {
+          "id": "5a3958260b7a6a219a2cf633",
+          "pretty_id": "calm",
+          "title": "Calm"
+        }
+      ],
+      "instruments": [
+        {
+          "id": "5a3958260b7a6a219a2cf616",
+          "pretty_id": "acoustic-guitar",
+          "title": "Acoustic Guitar"
+        }
+      ],
+      "tempos": [
+        {
+          "id": "5a3958260b7a6a219a2cf6a0",
+          "pretty_id": "bpm-medium-fast",
+          "title": "BPM: Medium-Fast"
+        }
+      ],
+      "tags": [
+        {
+          "id": "5a3958260b7a6a219a2cf655",
+          "pretty_id": "beach",
+          "title": "Beach"
+        }
+      ],
+      "themes": [
+        {
+          "id": "5a3958260b7a6a219a2cf6a4",
+          "pretty_id": "adventure",
+          "title": "Adventure"
+        }
+      ],
+      "cover": {
+        "id": "5abd0d39efce40001d9caaaf",
+        "thumb_url": "https://music-cdn.icons8.com/cover_preview/84/e8c46d3c-8261-44e7-98ab-e4894754d2a6.jpg"
+      },
+      "created_at": 1514463522,
+      "updated_at": 1525889127
+    }
+  ],
+  "total": 22
+}
