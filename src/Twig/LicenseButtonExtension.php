@@ -50,7 +50,6 @@ class LicenseButtonExtension extends AbstractExtension
     {
         $license = str_replace('cc-', '', $license);
         if(!in_array($license, $this->licenses)) {
-            $this->logger->error('License \'' . $license . '\' not found');
             return 'https://mirrors.creativecommons.org/presskit/cc.primary.srr.gif';
         }
 
