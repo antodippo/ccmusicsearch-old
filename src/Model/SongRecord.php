@@ -9,7 +9,8 @@ class SongRecord
     public string $author;
     public string $title;
     public string $duration;
-    public string $bmp;
+    public string $bpm;
+    public string $tags;
     public \DateTime $date;
     public string $link;
     public string $license;
@@ -20,6 +21,7 @@ class SongRecord
         string $title,
         string $duration,
         string $bpm,
+        string $tags,
         \DateTime $date,
         string $link,
         string $license,
@@ -29,6 +31,7 @@ class SongRecord
         $this->title = $title;
         $this->duration = $duration;
         $this->bpm = $bpm;
+        $this->tags = $tags;
         $this->date = $date;
         $this->link = $link;
         $this->license = $license;

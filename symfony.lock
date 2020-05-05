@@ -276,10 +276,16 @@
     "symfony/options-resolver": {
         "version": "v4.2.4"
     },
+    "symfony/polyfill-intl-grapheme": {
+        "version": "v1.15.0"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.10.0"
     },
     "symfony/polyfill-intl-idn": {
+        "version": "v1.15.0"
+    },
+    "symfony/polyfill-intl-normalizer": {
         "version": "v1.15.0"
     },
     "symfony/polyfill-mbstring": {
@@ -309,6 +315,9 @@
             "config/routes.yaml"
         ]
     },
+    "symfony/string": {
+        "version": "v5.0.8"
+    },
     "symfony/twig-bridge": {
         "version": "v4.2.4"
     },
@@ -337,6 +346,9 @@
     },
     "theseer/tokenizer": {
         "version": "1.1.0"
+    },
+    "twig/string-extra": {
+        "version": "v3.0.3"
     },
     "twig/twig": {
         "version": "v2.6.2"

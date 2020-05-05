@@ -16,7 +16,8 @@
         "symfony/framework-bundle": "^4.4",
         "symfony/monolog-bundle": "^3.3",
         "symfony/twig-bundle": "^4.4",
-        "symfony/yaml": "^4.4"
+        "symfony/yaml": "^4.4",
+        "twig/string-extra": "^3.0"
     },
     "require-dev": {
         "phake/phake": "^3.1",

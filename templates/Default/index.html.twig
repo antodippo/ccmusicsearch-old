@@ -27,9 +27,9 @@
                 <thead>
                     <tr>
                         <th>Author</th>
-                        <th>Title</th>
                         <th>Duration</th>
                         <th>BPM</th>
+                        <th>Tags</th>
                         <th>Date</th>
                         <th>Link</th>
                         <th>License</th>
@@ -39,24 +39,30 @@
                 <tbody>
                     {% for song in songs %}
                         <tr>
-                            <td>{{ song.author }}</td>
-                            <td>{{ song.title }}</td>
-                            <td width="80px">{{ song.duration }}</td>
-                            <td width="80px">{{ song.bpm }}</td>
-                            <td width="80px">{{ song.date|date('Y/m/d') }}</td>
-                            <td width="80px">
+                            <td class="author-title">
+                                <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <b>{{ song.author }}</b></p>
+                                <p><span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+                                {{ song.title }}</td></p>
+                            <td width="80px" class="centered-test-col">{{ song.duration }}</td>
+                            <td width="80px" class="centered-test-col">{{ song.bpm|default('n/a') }}</td>
+                            <td width="100px" class="song-tags centered-test-col">
+                                {{ song.tags|replace({',': ' ', '"': ' '})|u.truncate(100)|u.wordwrap(25, "\n", true).upper }}
+                            </td>
+                            <td width="100px" class="centered-test-col">{{ song.date|date('Y-m-d') }}</td>
+                            <td width="80px" class="centered-test-col">
                                 <a href='{{ song.link }}' target='_blank' class="btn btn-default btn-sm">
                                     <span class="glyphicon glyphicon-share"></span> Listen
                                 </a>
                             </td>
-                            <td width="100px">
+                            <td width="100px" class="centered-test-col">
                                 {% if getButtonImageUrl(song.license) %}
                                 <a href="{{ getButtonUrl(song.license) }}" target="_blank">
                                     <img src="{{ getButtonImageUrl(song.license) }}" />
                                 </a>
                                 {% endif %}
                             </td>
-                            <td width="100px">
+                            <td width="100px" class="centered-test-col">
                                 <img class="service-logo" src="{{ asset('logos/' ~ song.service ~ '.png') }}">
                             </td>
                         </tr>
