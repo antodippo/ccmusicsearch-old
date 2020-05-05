@@ -14,6 +14,7 @@ class SongRecordStub
             'The Beatles',
             $title,
             '02.40',
+            '120',
             new \DateTime('2020-05-02 00:00:00'),
             'https://www.jamendo.com/track/666',
             'by-sa',

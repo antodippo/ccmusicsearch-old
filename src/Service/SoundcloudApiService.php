@@ -57,6 +57,7 @@ class SoundcloudApiService implements ApiService
                 $result['user']['username'],
                 $result['title'],
                 (string) date('i.s', intval($result['duration']/1000)),
+                (string) $result['bpm'] ?? '',
                 new \DateTime($result['created_at']),
                 $result['permalink_url'],
                 $result['license'],

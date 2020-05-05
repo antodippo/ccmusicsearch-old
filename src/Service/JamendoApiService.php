@@ -47,6 +47,7 @@ class JamendoApiService implements ApiService
                     $song['artist_name'],
                     $song['name'],
                     (string) date('i.s', $song['duration']),
+                    '',
                     new \DateTime($song['releasedate']),
                     $song['shareurl'],
                     $this->getLicenseCodeFromUrl($song['license_ccurl']),

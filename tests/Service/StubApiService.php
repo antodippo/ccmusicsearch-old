@@ -7,15 +7,15 @@ namespace App\Tests\Service;
 use App\Model\ServicePromise;
 use App\Service\ApiService;
 use App\Tests\Model\SongRecordStub;
-use App\Tests\Model\StubPromise;
+use App\Tests\Model\PromiseStub;
 
 class StubApiService implements ApiService
 {
     public function getRequestPromises(array $filters): array
     {
         return [
-            new ServicePromise('stub', new StubPromise()),
-            new ServicePromise('stub', new StubPromise()),
+            new ServicePromise('stub', new PromiseStub()),
+            new ServicePromise('stub', new PromiseStub()),
         ];
     }
 
