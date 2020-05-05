@@ -1,11 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Model;
 
 class Search
 {
-    /** @var string */
-    private $searchString;
+    private string $searchString = '';
 
     public function getSearchString(): ?string
     {

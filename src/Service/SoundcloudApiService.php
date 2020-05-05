@@ -56,7 +56,7 @@ class SoundcloudApiService implements ApiService
             $songRecords[] = new SongRecord(
                 $result['user']['username'],
                 $result['title'],
-                date('i.s', intval($result['duration']/1000)),
+                (string) date('i.s', intval($result['duration']/1000)),
                 new \DateTime($result['created_at']),
                 $result['permalink_url'],
                 $result['license'],

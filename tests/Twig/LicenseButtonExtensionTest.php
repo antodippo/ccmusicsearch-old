@@ -35,7 +35,7 @@ class LicenseButtonExtensionTest extends TestCase
             ['by-nc-nd', 'http://creativecommons.org/licenses/by-nc-nd/4.0/'],
             ['cc-by-nc-nd', 'http://creativecommons.org/licenses/by-nc-nd/4.0/'],
             ['wrong-license', 'https://creativecommons.org'],
-            [null, 'https://creativecommons.org']
+            ['', 'https://creativecommons.org']
         ];
     }
 
@@ -67,7 +67,7 @@ class LicenseButtonExtensionTest extends TestCase
             ['by-nc-nd', 'https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png'],
             ['cc-by-nc-nd', 'https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png'],
             ['wrong-license', 'https://mirrors.creativecommons.org/presskit/cc.primary.srr.gif'],
-            [null, 'https://mirrors.creativecommons.org/presskit/cc.primary.srr.gif']
+            ['', 'https://mirrors.creativecommons.org/presskit/cc.primary.srr.gif']
         ];
     }
 
