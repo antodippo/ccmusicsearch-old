@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Search;
-use App\Service\ApiServiceFactory;
+use App\Service\SearchPerformer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -11,10 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 class CCMusicSearchController extends AbstractController
 {
-    public function index(Request $request, ApiServiceFactory $apiServiceFactory)
+    public function index(Request $request, SearchPerformer $searchPerformer)
     {
-        $songs = [];
-
         $form = $this->createFormBuilder(new Search())
             ->add('searchString', TextType::class)
             ->add('submit', SubmitType::class)
@@ -22,15 +20,10 @@ class CCMusicSearchController extends AbstractController
 
         $form->handleRequest($request);
 
+        $songs = [];
         if ($form->isSubmitted() && $form->isValid()) {
             $filters = ['tag' => $form->getData()->getSearchString()];
-            $apiServices = $this->getParameter('api_services');
-            foreach ($apiServices as $serviceName => $serviceId) {
-                $songs = array_merge(
-                    $songs,
-                    $apiServiceFactory->createService($serviceId)->getSongRecords($filters)
-                );
-            }
+            $songs = $searchPerformer->search($filters);
         }
 
         return $this->render('Default/index.html.twig', [

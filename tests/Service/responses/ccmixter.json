@@ -1,0 +1,112 @@
+[
+  {
+    "upload_id": 46456,
+    "upload_name": "Luwan House feat Sonja V",
+    "upload_extra": {
+      "usertags": "dance,pop,house,deep,vocals",
+      "ccud": "media,remix,bpm_120_125",
+      "systags": "non_commercial,audio,mp3,44k,stereo,CBR",
+      "featuring": "Sonja V",
+      "bpm": 123,
+      "relative_dir": "content/Reiswerk",
+      "nsfw": false,
+      "num_reviews": 1,
+      "ccplus": true
+    },
+    "user_name": "Reiswerk",
+    "upload_tags": ",media,remix,bpm_120_125,non_commercial,audio,mp3,44k,stereo,CBR,dance,pop,house,deep,vocals,",
+    "upload_num_scores": 6,
+    "file_page_url": "http://ccmixter.org/files/Reiswerk/46456",
+    "user_real_name": "reiswerk",
+    "artist_page_url": "http://ccmixter.org/people/Reiswerk",
+    "license_logo_url": "http://ccmixter.org/ccskins/shared/images/lics/small-by-nc-3.png",
+    "license_url": "http://creativecommons.org/licenses/by-nc/3.0/",
+    "license_name": "Attribution Noncommercial  (3.0)",
+    "upload_date_format": "Tue, Jul 1, 2014 @ 9:21 AM",
+    "files": [
+      {
+        "file_id": 69023,
+        "file_upload": 46456,
+        "file_name": "Reiswerk_-_Luwan_House_feat_Sonja_V.mp3",
+        "file_nicname": "mp3",
+        "file_format_info": {
+          "media-type": "audio",
+          "format-name": "audio-mp3-mp3",
+          "default-ext": "mp3",
+          "mime_type": "audio/mpeg",
+          "sr": "44k",
+          "ch": "stereo",
+          "ps": "2:28",
+          "br": "CBR"
+        },
+        "file_extra": {
+          "sha1": "6XBVFXGALQQLUILRVAXHLJOHSARRGSWA"
+        },
+        "file_filesize": " (4.52MB)",
+        "file_order": 0,
+        "file_is_remote": 0,
+        "file_num_download": 0,
+        "download_url": "http://ccmixter.org/content/Reiswerk/Reiswerk_-_Luwan_House_feat_Sonja_V.mp3",
+        "local_path": "/var/www/ccmixter/content/Reiswerk/Reiswerk_-_Luwan_House_feat_Sonja_V.mp3",
+        "file_rawsize": 4739701
+      }
+    ],
+    "upload_description_plain": "This is a mix between Vocal Deep House, pop and Dance.\r\n\r\ni Hope, you enjoy it!?",
+    "upload_description_html": "This is a mix between Vocal Deep House, pop and Dance.<br />\r\n<br />\r\ni Hope, you enjoy it!?"
+  },
+  {
+    "upload_id": 46416,
+    "upload_name": "Procrastinating_in_The_Sun",
+    "upload_extra": {
+      "usertags": "male_vocals,drums,guitar,bass,synthesizer,rock,pop",
+      "ccud": "big_summer_fest,remix,media,bpm_150_155",
+      "systags": "attribution,audio,mp3,44k,stereo,CBR",
+      "featuring": "Thespinwires",
+      "bpm": 151,
+      "relative_dir": "content/JeffSpeed68",
+      "nsfw": false,
+      "num_reviews": 2,
+      "ccplus": true
+    },
+    "user_name": "JeffSpeed68",
+    "upload_tags": ",big_summer_fest,remix,media,bpm_150_155,attribution,audio,mp3,44k,stereo,CBR,male_vocals,drums,guitar,bass,synthesizer,rock,pop,",
+    "upload_num_scores": 9,
+    "file_page_url": "http://ccmixter.org/files/JeffSpeed68/46416",
+    "user_real_name": "Stefan Kartenberg",
+    "artist_page_url": "http://ccmixter.org/people/JeffSpeed68",
+    "license_logo_url": "http://ccmixter.org/ccskins/shared/images/lics/small-by-3.png",
+    "license_url": "http://creativecommons.org/licenses/by/3.0/",
+    "license_name": "Attribution (3.0)",
+    "upload_date_format": "Fri, Jun 27, 2014 @ 5:22 PM",
+    "files": [
+      {
+        "file_id": 68942,
+        "file_upload": 46416,
+        "file_name": "JeffSpeed68_-_Procrastinating_in_The_Sun.mp3",
+        "file_nicname": "mp3",
+        "file_format_info": {
+          "media-type": "audio",
+          "format-name": "audio-mp3-mp3",
+          "default-ext": "mp3",
+          "mime_type": "audio/mpeg",
+          "sr": "44k",
+          "ch": "stereo",
+          "ps": "2:58",
+          "br": "CBR"
+        },
+        "file_extra": {
+          "sha1": "KZJYYOSEDGWWLIC53VP4ZWENUE76ME7F"
+        },
+        "file_filesize": " (6.80MB)",
+        "file_order": 0,
+        "file_is_remote": 0,
+        "file_num_download": 0,
+        "download_url": "http://ccmixter.org/content/JeffSpeed68/JeffSpeed68_-_Procrastinating_in_The_Sun.mp3",
+        "local_path": "/var/www/ccmixter/content/JeffSpeed68/JeffSpeed68_-_Procrastinating_in_The_Sun.mp3",
+        "file_rawsize": 7130428
+      }
+    ],
+    "upload_description_plain": "new york buffalo rock",
+    "upload_description_html": "new york buffalo rock"
+  }
+]

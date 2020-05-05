@@ -4,7 +4,6 @@ namespace App\Model;
 
 class SongRecord
 {
-
     /** @var string */
     public $author;
 

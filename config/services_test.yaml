@@ -4,4 +4,9 @@ services:
     _defaults:
         public: true
 
-    App\Service\ApiClient: '@App\Service\StubApiClient'
+    App\Service\JamendoApiService:
+        class: App\Tests\Service\StubApiService
+    App\Service\SoundcloudApiService:
+        class: App\Tests\Service\StubApiService
+    App\Service\CCMixterApiService:
+        class: App\Tests\Service\StubApiService
