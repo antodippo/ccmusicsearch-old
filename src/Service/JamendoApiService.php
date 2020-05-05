@@ -46,7 +46,7 @@ class JamendoApiService implements ApiService
                 $songRecords[] = new SongRecord(
                     $song['artist_name'],
                     $song['name'],
-                    date('i.s', $song['duration']),
+                    (string) date('i.s', $song['duration']),
                     new \DateTime($song['releasedate']),
                     $song['shareurl'],
                     $this->getLicenseCodeFromUrl($song['license_ccurl']),
@@ -58,9 +58,9 @@ class JamendoApiService implements ApiService
         return $songRecords;
     }
 
-    private function getLicenseCodeFromUrl(string $licenseUrl): ?string
+    private function getLicenseCodeFromUrl(string $licenseUrl): string
     {
         $licenseUrlArray = explode('/', $licenseUrl);
-        return isset($licenseUrlArray[4]) ? $licenseUrlArray[4] : null;
+        return isset($licenseUrlArray[4]) ? $licenseUrlArray[4] : '';
     }
 }

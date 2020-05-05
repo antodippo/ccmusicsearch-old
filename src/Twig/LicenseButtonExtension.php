@@ -8,17 +8,11 @@ use Twig\TwigFunction;
 
 class LicenseButtonExtension extends AbstractExtension
 {
-    /** @var string */
-    private $baseUrl;
-
-    /** @var string */
-    private $baseImageUrl;
-
-    /** @var array */
-    private $licenses;
-
-    /** @var LoggerInterface */
-    private $logger;
+    private string $baseUrl;
+    private string $baseImageUrl;
+    /** @var string[]  */
+    private array $licenses;
+    private LoggerInterface $logger;
 
     public function __construct(string $baseUrl, string $baseImageUrl, array $licenses, LoggerInterface $logger)
     {
@@ -41,7 +35,7 @@ class LicenseButtonExtension extends AbstractExtension
         ];
     }
 
-    public function getButtonUrl(?string $license): ?string
+    public function getButtonUrl(string $license): string
     {
         $license = str_replace('cc-', '', $license);
         if(!in_array($license, $this->licenses)) {
@@ -52,7 +46,7 @@ class LicenseButtonExtension extends AbstractExtension
         return str_replace('license_type', $license, $this->baseUrl);
     }
 
-    public function getButtonImageUrl(?string $license): ?string
+    public function getButtonImageUrl(string $license): string
     {
         $license = str_replace('cc-', '', $license);
         if(!in_array($license, $this->licenses)) {

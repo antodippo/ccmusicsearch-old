@@ -9,6 +9,7 @@ before_install:
   - docker-compose run --rm ccmusicsearch bin/console cache:clear --env=test
 
 script:
+  - docker-compose run --rm ccmusicsearch vendor/bin/psalm
   - docker-compose run --rm ccmusicsearch vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:

@@ -7,7 +7,6 @@ namespace App\Service;
 use App\Model\ServicePromise;
 use App\Model\SongRecord;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Promise\PromiseInterface;
 
 class CCMixterApiService implements ApiService
 {
@@ -39,10 +38,9 @@ class CCMixterApiService implements ApiService
         $results = json_decode($response, true) ?: [];
         $songRecords = [];
         foreach($results as $result) {
+            $formattedDuration = '';
             if(isset($result['files'][0]['file_format_info']['ps'])) {
                 $formattedDuration = $this->formatDuration($result['files'][0]['file_format_info']['ps']);
-            } else {
-                $formattedDuration = null;
             }
             $songRecords[] = new SongRecord(
                 $result['user_name'],
@@ -66,9 +64,9 @@ class CCMixterApiService implements ApiService
         return $durationArray[0] . '.' . $durationArray[1];
     }
 
-    private function getLicenseCodeFromUrl(string $licenseUrl): ?string
+    private function getLicenseCodeFromUrl(string $licenseUrl): string
     {
         $licenseUrlArray = explode('/', $licenseUrl);
-        return isset($licenseUrlArray[4]) ? $licenseUrlArray[4] : null;
+        return isset($licenseUrlArray[4]) ? $licenseUrlArray[4] : '';
     }
 }

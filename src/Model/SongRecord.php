@@ -1,29 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Model;
 
 class SongRecord
 {
-    /** @var string */
-    public $author;
-
-    /** @var string */
-    public $title;
-
-    /** @var string */
-    public $duration;
-
-    /** @var \DateTime */
-    public $date;
-
-    /** @var string */
-    public $link;
-
-    /** @var string|null */
-    public $license;
-
-    /** @var string */
-    public $service;
+    public string $author;
+    public string $title;
+    public string $duration;
+    public \DateTime $date;
+    public string $link;
+    public string $license;
+    public string $service;
 
     function __construct(
         string $author,
@@ -31,7 +20,7 @@ class SongRecord
         string $duration,
         \DateTime $date,
         string $link,
-        ?string $license,
+        string $license,
         string $service
     ) {
         $this->author = $author;
