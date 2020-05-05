@@ -1,0 +1,8 @@
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    # Uncomment any lines below to activate that Twig extension
+    Twig\Extra\String\StringExtension: ~

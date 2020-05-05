@@ -15,6 +15,7 @@ class SongRecordStub
             $title,
             '02.40',
             '120',
+            'brit pop beat guitar bass drums',
             new \DateTime('2020-05-02 00:00:00'),
             'https://www.jamendo.com/track/666',
             'by-sa',
