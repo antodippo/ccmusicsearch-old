@@ -46,6 +46,7 @@ class CCMixterApiService implements ApiService
                 $result['user_name'],
                 $result['upload_name'],
                 $formattedDuration,
+                (string)$result['upload_extra']['bpm'] ?? '',
                 \DateTime::createFromFormat('D, M j, Y @ g:i A', $result['upload_date_format']),
                 $result['file_page_url'],
                 $this->getLicenseCodeFromUrl($result['license_url']),

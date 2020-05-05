@@ -29,6 +29,7 @@
                         <th>Author</th>
                         <th>Title</th>
                         <th>Duration</th>
+                        <th>BPM</th>
                         <th>Date</th>
                         <th>Link</th>
                         <th>License</th>
@@ -41,6 +42,7 @@
                             <td>{{ song.author }}</td>
                             <td>{{ song.title }}</td>
                             <td width="80px">{{ song.duration }}</td>
+                            <td width="80px">{{ song.bpm }}</td>
                             <td width="80px">{{ song.date|date('Y/m/d') }}</td>
                             <td width="80px">
                                 <a href='{{ song.link }}' target='_blank' class="btn btn-default btn-sm">

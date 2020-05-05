@@ -6,7 +6,7 @@ namespace App\Tests\Model;
 
 use GuzzleHttp\Promise\PromiseInterface;
 
-class StubPromise implements PromiseInterface
+class PromiseStub implements PromiseInterface
 {
     public function then(callable $onFulfilled = null, callable $onRejected = null)
     {
