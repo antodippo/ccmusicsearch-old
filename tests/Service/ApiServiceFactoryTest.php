@@ -5,6 +5,7 @@ namespace App\Tests\Service;
 use App\Service\ApiServiceFactory;
 use App\Service\CCMixterApiService;
 use App\Service\Icons8ApiService;
+use App\Service\InternetArchiveApiService;
 use App\Service\JamendoApiService;
 use App\Service\SoundcloudApiService;
 use PHPUnit\Framework\TestCase;
@@ -21,6 +22,7 @@ class ApiServiceFactoryTest extends TestCase
             \Phake::mock(SoundcloudApiService::class),
             \Phake::mock(CCMixterApiService::class),
             \Phake::mock(Icons8ApiService::class),
+            \Phake::mock(InternetArchiveApiService::class),
         );
     }
 
@@ -37,6 +39,9 @@ class ApiServiceFactoryTest extends TestCase
 
         $apiService = $this->apiServiceFactory->get('App\Service\Icons8ApiService');
         $this->assertInstanceOf(Icons8ApiService::class, $apiService);
+
+        $apiService = $this->apiServiceFactory->get('App\Service\InternetArchiveApiService');
+        $this->assertInstanceOf(InternetArchiveApiService::class, $apiService);
     }
 
     public function testItThrowsAnException()
