@@ -10,17 +10,20 @@ class ApiServiceFactory
     private ApiService $soundcloudApiService;
     private ApiService $CCMixterApiService;
     private ApiService $icons8ApiService;
+    private ApiService $internetArchiveService;
 
     public function __construct(
         ApiService $jamendoApiService,
         ApiService $soundcloudApiService,
         ApiService $CCMixterApiService,
-        ApiService $icons8ApiService
+        ApiService $icons8ApiService,
+        ApiService $internetArchiveService
     ) {
         $this->jamendoApiService = $jamendoApiService;
         $this->soundcloudApiService = $soundcloudApiService;
         $this->CCMixterApiService = $CCMixterApiService;
         $this->icons8ApiService = $icons8ApiService;
+        $this->internetArchiveService = $internetArchiveService;
     }
 
     public function get(string $serviceName): ApiService
@@ -34,6 +37,8 @@ class ApiServiceFactory
                 return $this->CCMixterApiService;
             case 'App\Service\Icons8ApiService':
                 return $this->icons8ApiService;
+            case 'App\Service\InternetArchiveApiService':
+                return $this->internetArchiveService;
             default;
                 throw new \InvalidArgumentException('Service \'' . $serviceName . '\' does not exist');
         }

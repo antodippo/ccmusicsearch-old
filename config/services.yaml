@@ -10,6 +10,7 @@ parameters:
         soundcloud: 'App\Service\SoundcloudApiService'
         ccmixter: 'App\Service\CCMixterApiService'
         icons8: 'App\Service\Icons8ApiService'
+        internetarchive: 'App\Service\InternetArchiveApiService'
 
     jamendo.base_uri: https://api.jamendo.com/v3.0/tracks/
     jamendo.api_key: '%env(JAMENDO_API_KEY)%'
@@ -25,6 +26,9 @@ parameters:
 
     icons8.base_uri: http://api-music.icons8.com/api/v1/tracks
     icons8.limit: 30
+
+    internetarchive.base_uri: https://archive.org/advancedsearch.php
+    internetarchive.limit: 30
 
 services:
     _defaults:
@@ -44,6 +48,7 @@ services:
             $soundcloudApiService: '@App\Service\SoundcloudApiService'
             $CCMixterApiService: '@App\Service\CCMixterApiService'
             $icons8ApiService: '@App\Service\Icons8ApiService'
+            $internetArchiveService: '@App\Service\InternetArchiveApiService'
 
     App\Service\JamendoApiService:
         arguments:
@@ -67,6 +72,11 @@ services:
         arguments:
             $baseUri: '%icons8.base_uri%'
             $limit: '%icons8.limit%'
+
+    App\Service\InternetArchiveApiService:
+        arguments:
+            $baseUri: '%internetarchive.base_uri%'
+            $limit: '%internetarchive.limit%'
 
     App\Service\SearchPerformer:
         arguments:
