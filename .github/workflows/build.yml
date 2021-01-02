@@ -1,0 +1,36 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build containers
+        run:  docker-compose build
+
+      - name: Install dependencies
+        run:  docker-compose run --rm ccmusicsearch composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Clear cache
+        run:  docker-compose run --rm ccmusicsearch bin/console cache:clear --env=test
+
+      - name: Create logs directory
+        run:  mkdir -p build/logs
+
+      - name: Psalm
+        run: docker-compose run --rm ccmusicsearch vendor/bin/psalm
+
+      - name: PHPUnit
+        run: docker-compose run --rm ccmusicsearch php -dxdebug.mode=coverage vendor/bin/phpunit --coverage-clover=coverage.xml
+
+      - name: Upload code coverage
+        run: bash <(curl -s https://codecov.io/bash)
