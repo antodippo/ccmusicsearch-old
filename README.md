@@ -1,3 +1,6 @@
+:warning: This repository is archived, take a look at the new version: [https://github.com/antodippo/ccmusicsearch-v2](https://github.com/antodippo/ccmusicsearch-v2)
+
+
 # CCMusic Search
 
 [![Build Status](https://travis-ci.org/antodippo/ccmusicsearch.svg?branch=master)](https://travis-ci.org/antodippo/ccmusicsearch)
